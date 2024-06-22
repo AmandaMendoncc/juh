@@ -17,30 +17,29 @@ void MenuPrincipal()
         printf("\n\t[3] - JOGO DA FORCA");
         printf("\n\t[4] - RANKING");
         printf("\n\t[5] - SAIR DO PROGRAMA");
-        printf("\n\n\tESCOLHA UMA OPÇÃO: ");
+        printf("\n\n\tESCOLHA UMA OPÃ‡ÃƒO: ");
         scanf("%d", &opcao);
 
 
         switch(opcao)
 		{
             case 1:
-                // CHAMAR FUNÇÃO JOGO DA VELHA
                 Velha(nome);
                 break;
             case 2:
-                // CHAMAR FUNÇÃO CAMPO MINADO
+                // CHAMAR FUNÃ‡ÃƒO CAMPO MINADO
                 break;
             case 3:
-                // CHAMAR FUNÇÃO JOGO DA FORCA
+                Forca();
                 break;
             case 4:
-                // CHAMAR FUNÇÃO RANKING
+                // CHAMAR FUNÃ‡ÃƒO RANKING
                 break;
             case 5:
                 printf("\n\tSAINDO...");
                 break;
             default:
-                printf("\n\tOPÇÃO INVÁLIDA! TENTE NOVAMENTE.");
+                printf("\n\tOPÃ‡ÃƒO INVÃLIDA! TENTE NOVAMENTE.");
         }
     } while(opcao != 3);
 }
