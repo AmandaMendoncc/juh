@@ -34,7 +34,7 @@ void InicializarCasas(char casas[3][3])
 //COMENTAR ALGO SOBRE
 int VerificarVitoria(char casas[3][3], char jogador) 
 {
-    // VerificaÁ„o de linhas, colunas e diagonais
+    // Verifica??o de linhas, colunas e diagonais
     int i;
     for (i = 0; i < 3; i++) 
     {
@@ -57,14 +57,13 @@ void Velha(char *nome)
     printf("\t\t\n\nINICIALIZANDO JOGO DA VELHA...\n");
 
     char casas[3][3];
-    char res;
     int cont_jogadas;
 	int l, c;
 	int vez = 0;
 	int jogadorO = 0;
 	int jogadorX = 0;
 
-    do {
+    while (1) {
         InicializarCasas(casas);//ZERA TABULEIRO
         
         
@@ -75,14 +74,14 @@ void Velha(char *nome)
         do {
             Tabuleiro(casas); //TABULEIRO
             
-            if (vez % 2 == 0) // APARECER O TEXTO DE QM … A VEZ DE JOGAR
+            if (vez % 2 == 0) // APARECER O TEXTO DE QM ? A VEZ DE JOGAR
 			{
                 printf("\n\n\n\t\t\tVEZ DE 'X'");
             } else {
                 printf("\n\n\n\t\t\tVEZ DE 'O'");
             }
             
-            //SABER ONDE T¡ JOGANDO
+            //SABER ONDE T? JOGANDO
             printf("\n\n\n\t\t\tDIGITE A COLUNA: ");
             scanf("%d", &c);
             printf("\t\t\tDIGITE A LINHA: ");
@@ -92,10 +91,10 @@ void Velha(char *nome)
             l--; 
             c--;
 
-            //PERMITE JOGAR S” EM POSI«’ES V¡LIDAS
+            //PERMITE JOGAR S? EM POSI??ES V?LIDAS
             if (l < 0 || l > 2 || c < 0 || c > 2 || casas[l][c] != ' ')
 			{
-                printf("\n\n\n\t\t\tPOSI«√O INV¡LIDA! TENTE NOVAMENTE.\n");sleep(3);
+                printf("\n\n\n\t\t\tPOSI√á√ÉO INV√ÅLIDA! TENTE NOVAMENTE.\n");sleep(3);
                 Buffer();
                 while (getchar() != '\n');
                 continue;
@@ -111,17 +110,17 @@ void Velha(char *nome)
             vez++; //ALTERNA A VEZ DE JOGAR
             cont_jogadas++;
 
-            //VIT”RIA
+            //VIT?RIA
             if (VerificarVitoria(casas, 'X')) // SE JOGADOR 'X' GANHOU
 			{
                 cont_jogadas = 10;
                 Tabuleiro(casas);
                 printf("\n\n\n\t\t\tO JOGADOR 'X' GANHOU!");
-                printf("\n\t\t\tPARAB…NS!");
+                printf("\n\t\t\tPARAB√âNS!");
                 jogadorX++;
                 
-                //TABELA DE VIT”RIA
-                printf("\n\n\n\t\t\tN⁄MERO DE VIT”RIAS");
+                //TABELA DE VIT?RIA
+                printf("\n\n\n\t\t\tN√öMERO DE VIT√ìRIAS");
     			printf("\n\t\t\tJOGADOR 'X': %d", jogadorX);
     			printf("\n\t\t\tJOGADOR 'O': %d \n", jogadorO);
                 break;
@@ -130,11 +129,11 @@ void Velha(char *nome)
                 cont_jogadas = 10;
                 Tabuleiro(casas);
                 printf("\n\n\n\t\t\tO JOGADOR 'O' GANHOU!");
-                printf("\n\t\t\tPARAB…NS!");
+                printf("\n\t\t\tPARAB√âNS!");
                 jogadorO++;
                 
-                //TABELA DE VIT”RIA
-                printf("\n\n\n\t\t\tN⁄MERO DE VIT”RIAS");
+                //TABELA DE VIT?RIA
+                printf("\n\n\n\t\t\tN√öMERO DE VIT√ìRIAS");
     			printf("\n\t\t\tJOGADOR 'X': %d", jogadorX);
     			printf("\t\t\tJOGADOR 'O': %d \n", jogadorO);
                 break;
@@ -148,8 +147,6 @@ void Velha(char *nome)
             printf("\n\n\n\t\t\tDEU VELHA!");
         }
 	
-        printf("\n\n\n\t\t\tDESEJA JOGAR NOVAMENTE? [S/N]\n");
-        scanf(" %c", &res);
-    } while (res == 'S' || res == 's');
+        JogarNovamente();
+    } 
 }
-
