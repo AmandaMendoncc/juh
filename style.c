@@ -6,9 +6,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-void limpar_buffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
+void JogarNovamente(){
+	char escolha;
+	
+    
+	printf("\n\n\n\t\t\tDESEJA JOGAR NOVAMENTE? [S/N]\n");
+    scanf(" %c", &escolha);
+
+    if (escolha != 's' && escolha != 'S')
+	{
+    	MenuPrincipal();
+    }
 }
 
 void Limpar()
@@ -76,4 +84,3 @@ void Logo()
 
     printf("\n");
 }
-
