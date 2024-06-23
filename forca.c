@@ -53,7 +53,7 @@ void Forca()
 
 
 		Limpar();
-		Logo();
+		LogoForca();
 		
         printf("\n\n\n\t\t\tSUA PALAVRA TEM '%d' LETRAS", (int)strlen(palavra));
 
